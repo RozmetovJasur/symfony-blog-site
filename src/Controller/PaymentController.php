@@ -13,6 +13,7 @@ use App\Entity\Payment;
 use App\Form\PaymentType;
 use Doctrine\ORM\EntityManagerInterface;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
+use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,12 +24,12 @@ class PaymentController extends AbstractFOSRestController
 {
     /**
      * @return Response
-     * @Route("/payments", name="payment_list")
+     * @Rest\Get("/payments", name="payment_list")
      */
     public function list(): Response
     {
         return $this->render('payments/list.twig',[
-            'list' => ['1','2']
+            'list' => [1,2]
         ]);
     }
 
