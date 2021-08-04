@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'payments_list' %}
+
+{% block main %}
+
+    {% for item in  list %}
+        {{ item }}
+    {% endfor %}
+
+
+{% endblock %}
